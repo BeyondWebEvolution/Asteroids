@@ -1,6 +1,5 @@
 package states 
 {
-	import com.adobe.tvsdk.mediacore.events.NotificationEvent;
 	import core.Entity;
 	import core.Game;
 	import core.State; 
@@ -31,7 +30,7 @@ package states
 	import SoundManager;
 	public class PlayState extends State{
 		private var _asteroidCount:Number = 0; 
-		private var _playerScore:Number = 0; 
+		public static var _playerScore:Number = 0; 
 		private var _scoreBoard:Label = new Label("Score: 0", 56, Config.getColor("white", "color") , Config.getSetting("font", "settings") , true); 
 		private var _level:Label = new Label("Level: 0", 48, Config.getColor("white", "color") , Config.getSetting("font", "settings") , true); 
 		private var _currentLevel:Number = 0; 
@@ -59,8 +58,7 @@ package states
 		
 		private var _ufoAlive:Boolean = false;
 		private var _ufo:UFO = new UFO(0, 0); 
-		
-		
+
 		private var _fireSFX:SoundManager = new SoundManager("./assets/fire.mp3"); 
 		private var _bangSmall:SoundManager = new SoundManager("./assets/bangSmall.mp3");
 		private var _bangMedium:SoundManager = new SoundManager("./assets/bangMedium.mp3");
@@ -327,6 +325,9 @@ package states
 			_bangMedium = null; 
 			_bangLarge = null; 
 			_background = null; 
+			_healthShip1 = null;
+			_healthShip2 = null;
+			_healthShip3 = null;
 		}
 
  

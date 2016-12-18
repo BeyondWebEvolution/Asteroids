@@ -2,7 +2,6 @@ package core {
 	import flash.display.Sprite;
 	import flash.events.Event; 
 	import states.GameOverState;
-	import states.HighScoresState;
 	import states.InstructionState;
 	import states.MainMenuState;
 	import states.PlayState;
@@ -36,8 +35,6 @@ package core {
 			addEventListener(Event.DEACTIVATE, onDeactivate, false, 0, true); 
 			core.Key.init(stage); 
 			changeState(MENU_STATE); 
-			//come back to this
-			
 		}
 		private function onDeactivate(e:Event):void{
 			removeEventListener(Event.ENTER_FRAME, onEnterFrame);
@@ -62,7 +59,7 @@ package core {
 				_currentState = new InstructionState(this); 
 			}else if (nextState == GAME_OVER_STATE){
 				_currentState = new GameOverState(this); 
-			}//highscores
+			}
 			addChild(Sprite(_currentState));
 			
 			
